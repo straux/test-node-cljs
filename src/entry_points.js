@@ -1,4 +1,4 @@
 exports.helloHttp = function helloHttp (req, res) {
-  venice.core.helloWorld(req,res);
+  test_node_cljs.core.helloWorld(req,res);
 };
 

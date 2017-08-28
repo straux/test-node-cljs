@@ -22,7 +22,7 @@ Run:
 
     functions start
     functions deploy helloHttp --local-path=target --trigger-http # only once
-    functions call helloHttp --data='{message:"test"}'
-    functions call helloHttp --data='{message:"fail"}'
+    functions call helloHttp --data='{"message":"test"}'
+    functions call helloHttp --data='{"message":"fail"}'
     functions stop
 

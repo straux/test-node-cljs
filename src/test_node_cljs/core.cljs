@@ -1,4 +1,4 @@
-(ns venice.core
+(ns test-node-cljs.core
   (:require [clojure.string :as str]
             [functions.entry-points]
             [cljs.nodejs :as nodejs]))
@@ -10,7 +10,7 @@
 
 (defn ^:export helloWorld 
   [req res]
-  (let [msg (aget req "body" "message")]
+  (let [msg (.. req -body -message)]
      (when (= msg "fail")
        (throw (new js/Error "failed")))
      (. res (send "hello World !"))))
