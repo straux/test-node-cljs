@@ -3,12 +3,17 @@
             [functions.entry-points]
             [cljs.nodejs :as nodejs]))
 
+;; see https://cloud.google.com/functions/docs/writing/
+
 (nodejs/enable-util-print!)
 (. (nodejs/require "source-map-support") (install #js {:environment "node"})) 
 
 (defn ^:export helloWorld 
   [req res]
-  (. res (send "hello World !")))
+  (let [msg (aget req "body" "message")]
+     (when (= msg "fail")
+       (throw (new js/Error "failed")))
+     (. res (send "hello World !"))))
 
 (defn -main [& args]
    (when (= (first args) "fail")
