@@ -1,7 +1,5 @@
 # Sample of clojurescript integration with nodejs and google functions 
 
-Clojurescript version bootstraped from https://github.com/plexus/gas-of-life
-
 ## Build
 
   rm target/index.js
