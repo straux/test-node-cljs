@@ -2,13 +2,13 @@
 
 ## Build
 
-  rm target/index.js
-  lein cljsbuild once functions
+    rm target/index.js
+    lein cljsbuild once functions
 
 
 ## Run locally (main fn)
 
-   node target/index.js
+    node target/index.js
 
 ## Simulate Google Functions locally
 
